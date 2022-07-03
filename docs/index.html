@@ -267,7 +267,7 @@
         Object.values(cart()).forEach(product => {
             orderList.push({
                 'label': product.name,
-                'amount': (product.price).toFixed(0)
+                'amount': (product.price).toFixed(2)
             })
         })
         console.log(orderList);
