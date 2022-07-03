@@ -73,6 +73,7 @@ async def checkout(pre_checkout_query: types.PreCheckoutQuery):
 @dp.message_handler(content_types=ContentTypes.SUCCESSFUL_PAYMENT)
 async def success_payment(message: types.Message):
     print(message)
+    await bot.delete_message(chat_id=message.chat.id, message_id=message.message_id - 1)
     await bot.send_message(chat_id=message.chat.id, text="Спасибо за заказ!")
     await bot.send_message(chat_id=ADMIN_CHAT_ID, text=f"НОВЫЙ ЗАКАЗ!"
                                                        f"\nИМЯ: {message['successful_payment']['order_info']['name']}"
