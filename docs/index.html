@@ -142,7 +142,7 @@
         function arrayShufle(array) {
             return array.sort((a, b) => 0.5 - Math.random())
         }
-        let products = [{
+        let productsBase = [{
             "name": "Товар 1",
             "img": "1.jpg",
             "price": 100
@@ -159,8 +159,8 @@
             const productList = document.querySelector("div.product-list")
 
             productList.innerHTML = ""
-            console.log(arrayShufle(products));
-            arrayShufle(products).forEach(el => {
+            console.log(arrayShufle(productsBase));
+            arrayShufle(productsBase).forEach(el => {
                 productList.innerHTML += `
                     <div class="col-4 product animate__animated animate__fadeInUpBig">
                         <img src="images/${el['img']}" alt="product">
