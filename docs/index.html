@@ -142,7 +142,7 @@
         function arrayShufle(array) {
             return array.sort((a, b) => 0.5 - Math.random())
         }
-        let nftBase = [{
+        let products = [{
             "name": "Товар 1",
             "img": "1.jpg",
             "price": 100
@@ -159,8 +159,8 @@
             const productList = document.querySelector("div.product-list")
 
             productList.innerHTML = ""
-            // console.log(arrayShufle(nftBase));
-            arrayShufle(nftBase).forEach(el => {
+            console.log(arrayShufle(products));
+            arrayShufle(products).forEach(el => {
                 productList.innerHTML += `
                     <div class="col-4 product animate__animated animate__fadeInUpBig">
                         <img src="images/${el['img']}" alt="product">
@@ -270,8 +270,8 @@
                 'amount': (product.price).toFixed(0)
             })
         })
-        // console.log(orderList);
-        document.querySelector("#logbox").innerText = JSON.stringify(orderList, null, 4)
+        console.log(orderList);
+
         const BotToken = '5418286898:AAGfWkyf8bZdeFqe7aXi_r0KDadkFsnrq8Q'
         let method = "sendInvoice"
         axios.post(`https://api.telegram.org/bot${BotToken}/${method}`, {
@@ -309,7 +309,7 @@
                 },
             })
             .then(function (response) {
-                // console.log(response);
+                console.log(response);
                 // document.querySelector("#logbox").innerText = JSON.stringify(response, null, 4)
                 if (response.data.result) telegram.close()
             })
