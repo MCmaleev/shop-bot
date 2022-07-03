@@ -16,7 +16,7 @@ dp = Dispatcher(bot)
 
 async def on_startup(dp):
     await bot.set_chat_menu_button(
-        menu_button=MenuButtonWebApp(text="Магазин", web_app=WebAppInfo(url="https://mproweb.uz/YTless/NFT_market/web/"))
+        menu_button=MenuButtonWebApp(text="Магазин", web_app=WebAppInfo(url="https://mcmaleev.github.io/shop-bot/"))
     )
 
 
@@ -58,7 +58,7 @@ async def info(message: types.Message):
                 ],
                 [
                     types.InlineKeyboardButton(text="♻ Назад в магазин", web_app=types.WebAppInfo(
-                        url="https://mproweb.uz/YTless/NFT_market/web/"))
+                        url="https://mcmaleev.github.io/shop-bot/"))
                 ]
             ])
     )
