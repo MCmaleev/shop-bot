@@ -129,14 +129,10 @@
     <script>
         const telegram = window.Telegram.WebApp
         const telegramData = telegram.initDataUnsafe
-        if (Object.keys(telegramData).length === 0 || typeof telegramData.user === 'undefined') {
-            // document.querySelector("body").innerText =
-            //     "Xatolik, faqat @im_NFTmarket_bot ichida xizmat ko'rsatadi !";
-            // window.location.href = "https://mproweb.uz/";
-        } else {
-            telegram.expand()
-            document.querySelector("#logbox").innerText = JSON.stringify(telegram, null, 4)
-        }
+
+        telegram.expand()
+        document.querySelector("#logbox").innerText = JSON.stringify(telegram, null, 4)
+
         const themeParams = telegram.themeParams
         const mainButton = telegram.MainButton
     </script>
@@ -323,19 +319,7 @@
                 console.log(error);
             });
         })
-        // const BotToken = '5418286898:AAGfWkyf8bZdeFqe7aXi_r0KDadkFsnrq8Q'
-        //     let method = "sendMessage"
-        //     axios.post(`https://api.telegram.org/bot${BotToken}/${method}`, {
-        //         'chat_id': 679143250,
-        //         'text': 'salom'
-        //     })
-        //     .then(function (response) {
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     });
+
     </script>
 </body>
-
-</html
+</html>
