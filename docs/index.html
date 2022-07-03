@@ -134,6 +134,8 @@
 
         const themeParams = telegram.themeParams
         const mainButton = telegram.MainButton
+
+        console.log(themeParams)
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/all.js"></script>
@@ -262,7 +264,6 @@
         }
 
         mainButton.onClick(() => {
-        // mainButton.showProgress();
         let orderList = []
         Object.values(cart()).forEach(product => {
             orderList.push({
@@ -314,7 +315,6 @@
                 if (response.data.result) telegram.close()
             })
             .catch(function (error) {
-                document.querySelector("#logbox").innerText = JSON.stringify(error, null, 4)
                 console.log(error);
             });
         })
