@@ -4,8 +4,6 @@ import logging
 from aiogram.types import ContentTypes, MenuButtonWebApp, WebAppInfo
 from aiogram.utils import executor
 
-from keyboards import main_i_menu
-
 
 logging.basicConfig(level=logging.INFO)
 
@@ -25,7 +23,7 @@ async def on_startup(dp):
 @dp.message_handler(commands=["info", "start"])
 async def info(message: types.Message):
     reply = 'Тестовый бот магазина'
-    await message.answer(reply, reply_markup=main_i_menu)
+    await message.answer(reply)
 
 
 @dp.message_handler(commands=["testpay"])
