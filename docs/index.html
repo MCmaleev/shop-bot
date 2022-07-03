@@ -272,14 +272,15 @@
         })
         console.log(orderList);
 
-        const BotToken = '5418286898:AAGfWkyf8bZdeFqe7aXi_r0KDadkFsnrq8Q'
+        const BotToken = '5494707928:AAFujbekNwEBa7soMvkDR7FjFmVc0ntdvPY'
+        const ProviderToken = '284685063:TEST:ZmMwYjBhYjRjN2Jk'
         let method = "sendInvoice"
         axios.post(`https://api.telegram.org/bot${BotToken}/${method}`, {
                 'chat_id': telegramData.user.id,
                 'title': 'Оплата тестового счета',
                 'description': 'Описание тестового счета.',
                 'payload': "testpay=1445",   
-                'provider_token': '284685063:TEST:ZmMwYjBhYjRjN2Jk',
+                'provider_token': ProviderToken,
                 'currency': 'RUB',
                 'prices': orderList,
                 'photo_url': "http://d2vrvpw63099lz.cloudfront.net/checkout-elements/checkout-boy.jpg",
